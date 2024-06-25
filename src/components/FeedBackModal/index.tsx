@@ -7,7 +7,7 @@ import { FeedbackForm } from "../FeedbackForm";
 import { FeedBackProps, Stages } from "../../shared/types";
 import { STAGES } from "../../shared/constants";
 
-export const FeedBackModal: FC<FeedBackProps> = (props) => {
+export const FeedBackModal: FC<Omit<FeedBackProps, "onClose" | "isVisible">> = (props) => {
     const { stage, onChangeStage, } = useFeedback();
     const [visible, setVisible] = useState(false);
 
@@ -32,6 +32,7 @@ export const FeedBackModal: FC<FeedBackProps> = (props) => {
                         item={item}
                         {...props}
                         onClose={onClose}
+                        isVisible={visible}
                     />
                 );
             }
@@ -42,6 +43,7 @@ export const FeedBackModal: FC<FeedBackProps> = (props) => {
                         item={item}
                         {...props}
                         onClose={onClose}
+                        isVisible={visible}
                     />
                 );
             }
@@ -52,6 +54,7 @@ export const FeedBackModal: FC<FeedBackProps> = (props) => {
                         item={item}
                         {...props}
                         onClose={onClose}
+                        isVisible={visible}
                     />
                 );
             }

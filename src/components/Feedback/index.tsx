@@ -1,9 +1,11 @@
 import { FC } from "react";
 import { FeedBackProvider } from "../../context/FeedBackContext";
 import { FeedBackModal } from "../FeedBackModal";
-import { FeedBackProps } from "../../shared/types";
+interface IFeedBackProps {
+    appId: number
+}
 
-export const Feedback: FC<FeedBackProps> = (props) => {
+export const Feedback: FC<IFeedBackProps> = (props) => {
     return (
         <FeedBackProvider>
             <FeedBackModal {...props} />

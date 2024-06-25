@@ -9677,7 +9677,8 @@ const xm = ({ item: e, onClose: t }) => {
           {
             item: a,
             ...e,
-            onClose: r
+            onClose: r,
+            isVisible: s
           },
           a.id
         );
@@ -9687,7 +9688,8 @@ const xm = ({ item: e, onClose: t }) => {
           {
             item: a,
             ...e,
-            onClose: r
+            onClose: r,
+            isVisible: s
           },
           a.id
         );
@@ -9697,7 +9699,8 @@ const xm = ({ item: e, onClose: t }) => {
           {
             item: a,
             ...e,
-            onClose: r
+            onClose: r,
+            isVisible: s
           },
           a.id
         );

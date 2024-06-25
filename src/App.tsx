@@ -36,8 +36,6 @@ function App() {
             </Modal> */}
             <Feedback
                 appId={1}
-                isVisible={count}
-                onClose={() => setCount(false)}
             />
         </>
     );

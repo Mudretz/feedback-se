@@ -1,4 +1,7 @@
 import { FC } from 'react';
-import { FeedBackProps } from '../../shared/types';
 
-export declare const Feedback: FC<FeedBackProps>;
+interface IFeedBackProps {
+    appId: number;
+}
+export declare const Feedback: FC<IFeedBackProps>;
+export {};
