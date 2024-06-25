@@ -1,0 +1,32 @@
+.container {
+    height: 16rem;
+    width: 28rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: center;
+    
+    .text {
+        font-size: 0.75rem;
+    }
+    
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    width: 50%;
+    align-self: center;
+}
+
+.line {
+    background-color: #00000020;
+    min-height: 1px;
+}

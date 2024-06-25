@@ -1,0 +1,26 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    .text {
+        font-size: 0.75rem;
+        visibility: hidden;
+    }
+
+    .button {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover + .text {
+            visibility: visible;
+        }
+    }
+
+    .image {
+        height: 50px;
+        width: 50px;
+    }
+}
