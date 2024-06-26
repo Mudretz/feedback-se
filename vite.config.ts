@@ -3,10 +3,11 @@ import react from '@vitejs/plugin-react-swc'
 import dts from "vite-plugin-dts";
 import path from "path";
 import tailwindcss from "tailwindcss";
+import libCss from 'vite-plugin-libcss';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [react(), dts(), libCss()],
   build: {
     lib: {
       entry: path.resolve(__dirname, "index.ts"),
