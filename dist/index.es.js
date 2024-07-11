@@ -9713,6 +9713,6 @@ const xm = ({ item: e, onClose: t }) => {
   }) });
 }, Rm = (e) => /* @__PURE__ */ R.jsx(il, { children: /* @__PURE__ */ R.jsx(bm, { ...e }) });
 export {
-  Rm as Feedback
+  Rm as default
 };
 //# sourceMappingURL=index.es.js.map

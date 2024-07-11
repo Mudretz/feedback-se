@@ -1,2 +1,3 @@
-export { Feedback } from "./src/components/Feedback";
-import "./src/tailwind.css";
+import { Feedback } from "./src/components/Feedback";
+
+export default Feedback;
