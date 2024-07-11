@@ -25,7 +25,7 @@ function App() {
             <div className='card'>
                 <button onClick={() => setCount(true)}>count is {count}</button>
                 <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
+                    Edit <code>src/App.tsx</code> and save to test HMR1
                 </p>
             </div>
             <p className='read-the-docs'>
