@@ -1,0 +1,3 @@
+npm build
+npm add dist
+npm commit -m "Сборка проекта"
