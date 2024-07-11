@@ -1,8 +1,3 @@
-if [ -n "$(git status --porcelain dist)" ]; then
-  # Add dist changes to git
-  git add dist
-  # Commit changes with message
-  git commit -m "Сборка проекта"
-else
-  echo "No changes in dist directory"
-fi
+npm run build
+git add dist
+git commit -m "Сборка проекта"
