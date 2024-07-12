@@ -1,4 +1,4 @@
-name: Build React App
+name: Сборка React-приложения
 
 on:
   push:
@@ -10,37 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Клонировать репозиторий
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Установить Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
 
-      - name: Install dependencies
+      - name: Установить зависимости
         run: npm install
 
-      - name: Build the project
+      - name: Сборка проекта
         run: npm run build
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
-
-      - name: Configure git
+      - name: Настроить git
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-      - name: Commit build artifacts
+      - name: Закоммитить артефакты сборки
         run: |
           git add dist
           git commit -m "Добавить артефакты сборки"
 
-      - name: Push changes
-        run: git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Пуш изменений
+        run: git push origin HEAD:refs/tags/${GITHUB_REF#refs/tags/}
