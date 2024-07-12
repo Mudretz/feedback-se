@@ -21,7 +21,7 @@ export const InitialContent: FC<Props> = ({ item, onClose }) => {
     return (
         <FormContainer title={item.title} onClose={onClose}>
             {item.text && <p className='text-xs'>{item.text}</p>}
-            <p>Версия 1.0.5</p>
+            <p>Версия 1.0.6</p>
             <div className={styles.list}>
                 {RATES.map((item) => (
                     <RateItem key={item.id} item={item} onClick={onSubmit} />
