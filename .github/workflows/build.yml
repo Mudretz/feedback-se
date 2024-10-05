@@ -1,22 +1,17 @@
-name: Build React App
+name: Build and Tag Release
 
 on:
   push:
     tags:
-      - '*'
+      - 'v*.*.*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
+      - name: Checkout the code
+        uses: actions/checkout@v2
 
       - name: Install dependencies
         run: npm install
@@ -24,15 +19,8 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Configure git
+      - name: Push built files to release
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Commit build artifacts
-        run: |
-          git add dist
-          git commit -m "Добавить артефакты сборки"
-
-      - name: Push changes
-        run: git push origin main
+          git add dist/
+          git commit -m "Add built files"
+          git push origin ${{ github.ref }}
