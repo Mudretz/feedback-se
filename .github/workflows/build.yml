@@ -17,8 +17,8 @@ jobs:
 
       - name: Set git user
         run: |
-          git config user.email "zham.drag@gmail.com"
-          git config user.name "mudretz"
+          git config user.email "${{ github.event.pusher.email }}"
+          git config user.name "${{ github.actor }}"
 
       - name: Install dependencies
         run: npm install
@@ -32,8 +32,6 @@ jobs:
           git commit -m "Add built files"
 
       - name: Push updated tag
-        env:
-          TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           # Извлекаем имя тега из github.ref
           CURRENT_TAG=$(echo "${{ github.ref }}" | sed 's|refs/tags/||')
