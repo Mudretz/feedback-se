@@ -32,8 +32,6 @@ jobs:
       - name: Push built files to the current branch
         env:
           TOKEN: ${{ secrets.PAT_TOKEN }}
-        # run: |
-        #   git push origin HEAD:${{ github.ref }}
 
       - name: Push updated tag
         env:
