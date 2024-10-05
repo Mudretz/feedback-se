@@ -1,1 +1,5 @@
-npm run build
+if [ $(git rev-parse HEAD) != $(git rev-parse origin/$(git rev-parse --abbrev-ref HEAD)) ]; then
+  echo "Ваша ветка не синхронизирована с удалённой. Нужно сделать git pull."
+else
+  echo "Ваша ветка актуальна."
+fi
