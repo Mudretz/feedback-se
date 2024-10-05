@@ -16,8 +16,8 @@ jobs:
 
       - name: Set git user
         run: |
-          git config user.email "you@example.com"
-          git config user.name "Your Name"
+          git config user.email "zham.drag@gmail.com"
+          git config user.name "mudretz"
 
       - name: Install dependencies
         run: npm install
@@ -26,6 +26,8 @@ jobs:
         run: npm run build
 
       - name: Push built files to release
+        env:
+          TOKEN: ${{ secrets.PAT_TOKEN }} 
         run: |
           git add dist/
           git commit -m "Add built files"
