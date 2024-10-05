@@ -46,9 +46,17 @@ jobs:
         run: |
           # Переключаемся на ветку main
           git checkout main
-          
-          # Мерджим изменения с текущей ветки в main
-          git merge ${{ github.sha }} --no-ff
+  
+      - name: Install dependencies
+        run: npm install
 
-          # Пушим изменения в ветку main
+      - name: Build the project
+        run: npm run build
+
+      - name: Add built files and commit
+        env:
+          TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          git add dist/
+          git commit -m "Add built files"
           git push origin main
