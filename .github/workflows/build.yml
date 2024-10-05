@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Загружаем все ветки
 
       - name: Set git user
         run: |
