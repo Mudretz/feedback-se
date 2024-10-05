@@ -28,7 +28,7 @@ jobs:
 
       - name: Add built files and commit
         run: |
-          git add dist/
+          git add .
           git commit -m "Add built files"
 
       - name: Push updated tag
