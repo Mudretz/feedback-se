@@ -29,10 +29,6 @@ jobs:
           git add dist/
           git commit -m "Add built files"
 
-      - name: Push built files to the current branch
-        env:
-          TOKEN: ${{ secrets.PAT_TOKEN }}
-
       - name: Push updated tag
         env:
           TOKEN: ${{ secrets.PAT_TOKEN }}
