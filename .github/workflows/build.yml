@@ -33,5 +33,7 @@ jobs:
         env:
           TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          git tag -f ${{ github.ref }}  # Перезапись тега с обновлёнными файлами
+          # Извлекаем имя тега из github.ref
+          CURRENT_TAG=$(echo "${{ github.ref }}" | sed 's|refs/tags/||')
+          git tag -f $CURRENT_TAG  # Перезапись тега с обновлёнными файлами
           git push origin --tags --force
