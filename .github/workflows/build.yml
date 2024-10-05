@@ -52,3 +52,5 @@ jobs:
 
           # Пушим изменения в ветку main
           git push origin main
+      - name: Print commit SHA
+        run: echo "Commit SHA for the tag is ${{ github.sha }}"
