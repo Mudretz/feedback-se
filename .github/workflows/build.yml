@@ -54,3 +54,8 @@ jobs:
           git push origin main
       - name: Print commit SHA
         run: echo "Commit SHA for the tag is ${{ github.sha }}"
+      - name: Merge changes
+        run: |
+          git checkout main
+          git merge ${{ github.sha }}
+          git push origin main
