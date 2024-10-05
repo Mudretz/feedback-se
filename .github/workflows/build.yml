@@ -13,10 +13,11 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
+
       - name: Set git user
         run: |
-          git config user.email "zham.drag@gmail.com"
-          git config user.name "mudretz"
+          git config user.email "you@example.com"
+          git config user.name "Your Name"
 
       - name: Install dependencies
         run: npm install
@@ -24,8 +25,8 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Add built files and push tag
+      - name: Push built files to release
         run: |
           git add dist/
           git commit -m "Add built files"
-          git push origin refs/tags/v1.1.2
+          git push origin ${{ github.ref }}
