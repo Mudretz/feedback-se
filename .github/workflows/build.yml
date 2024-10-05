@@ -37,25 +37,7 @@ jobs:
         run: |
           # Извлекаем имя тега из github.ref
           CURRENT_TAG=$(echo "${{ github.ref }}" | sed 's|refs/tags/||')
+          git checkout main
+          git push origin main
           git tag -f $CURRENT_TAG  # Перезапись тега с обновлёнными файлами
           git push origin --tags --force
-
-      - name: Push built files to main branch
-        env:
-          TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
-          # Переключаемся на ветку main
-          git checkout main
-          
-          # Мерджим изменения с текущей ветки в main
-          git merge ${{ github.sha }} --no-ff
-
-          # Пушим изменения в ветку main
-          git push origin main
-      - name: Print commit SHA
-        run: echo "Commit SHA for the tag is ${{ github.sha }}"
-      - name: Merge changes
-        run: |
-          git checkout main
-          git merge ${{ github.sha }}
-          git push origin main
